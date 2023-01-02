@@ -1,0 +1,69 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi", "Hello","Hey", "Is anyone there?", "Halo", "Helo","Hay","Hy"],
+     "responses": ["Hello, Tell me how can assist you", "Hi, Tell me how can assist you", "Hi there, Tell me how can assist you"]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye"],
+     "responses": ["See you later", "Have a nice day", "Bye! Come back again"]
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help"],
+     "responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!"]
+    },
+    {"tag": "about",
+     "patterns": ["Who are you?", "What are you?", "Who you are?" ],
+     "responses": ["I.m Jarvis, your bot assistant", "I'm Jarvis"]
+    },
+    {"tag": "name",
+    "patterns": ["what is your name","Your name", "what should I call you", "whats your name?"],
+    "responses": ["You can call me Jarvis.", "I'm Jarvis!", "Just call me as Jarvis"]
+    },
+  {"tag": "bot",
+    "patterns": ["are you a bot","are you bot","bot?", "Are you real?", "are you human?"],
+    "responses": ["Yes, I am bot"]
+    },
+    {"tag": "help",
+    "patterns": ["Could you help me?", "give me a hand please", "Can you help?", "What can you do for me?", "I need a support", "I need a help", "support me please"],
+    "responses": ["Tell me how can assist you"]
+    },
+
+    {"tag": "complaint",
+    "patterns": ["have a complaint", "I want to raise a complaint", "there is a complaint about a service"],
+    "responses": ["Please provide us your complaint in order to assist you"]
+    },
+    {"tag": "search",
+    "patterns": ["what is","who is","when","what","whom is"],
+    "responses": ["search"]
+    },
+    {"tag": "time",
+    "patterns": ["what is time","who is date","time","date","time right now"],
+    "responses": ["time"]
+    },
+  {"tag": "narveer",
+    "patterns": ["who is narveer","narveer","narveer singh","singh narveer","who is narveer singh","CEO of RFM","who is owner of RFM"],
+    "responses": ["(Narveer Singh) He is the professional digital marketer having the experience of more than 5 years in digital marketing, He is the Founder & CEO at  Root Force Marketer (Company providing Digital coaching  to Entrepreneurs and Marketing professionals) and RFM Summit (Marketing Event Which Talks About Future Of Marketing)\n\nSchedule An Appointment\n"]
+    },
+  {"tag": "appointment",
+    "patterns": ["want to take appointment","appointment","appointment with narveer","I want to take appointment","want to talk with narveer","I want to talk with narveer"],
+    "responses": ["appoint"]
+    },
+  {"tag": "enhance",
+    "patterns": ["i want to enhance my business","i want suggestion for my business","wanted to boost my company",
+      "i want guidance for business","i want to boost my business","boost my business","i want to boost my company"],
+    "responses": ["appoint"]
+    },{"tag": "contact",
+    "patterns": ["any contact number","contact no","contact","phone number","phone no","contact no of narveer","contact narveer"],
+    "responses": ["contact"]
+    },{"tag": "email",
+    "patterns": ["email","email id ","email id of narveer","gmail","gmail id"],
+    "responses": ["email"]
+    },{"tag": "helping",
+    "patterns": ["How he can help in my business","What narveer can Do For me?","how he enhance my business","what steps he will taken to enhance my business","how he will help"],
+    "responses": ["he will help in Visioning, Planning, Research, Networking, Branding, Marketing, Advertising, Funnel Design, Analysis"]
+    },{"tag": "oh",
+    "patterns": ["oh ok","oh","ok","oh k","k okay","oh okay","okey"],
+    "responses": ["yes"]
+    }
+]
+}

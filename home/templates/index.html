@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Jarvis</title>
+	<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		.chat-box .mess {
+	max-width: 300px;
+	background: #F7FCF6;
+	padding: 2px;
+	border-radius: 5px;
+	margin:2px 0px;
+	cursor: pointer;
+	word-break: break-word;
+}
+.chat-box .mess p {
+	word-break: break-word;
+	font-size: 15px;
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="chat">
+			<div class="chat-header">
+				<div class="profile">
+					<div class="left">
+						<img src="{% static 'img/pp.png' %}" class="pp">
+						<h2>Jarvis</h2>
+						
+					</div>
+					
+				</div>
+			</div>
+			<div class="chat-box" id="add">
+				
+				</div>
+
+			<div class="chat-footer">
+				<img src="{% static 'img/emo.png' %}" class="emo">
+				<textarea placeholder="Type a message" id="myTextarea" name="myvalue"></textarea>
+				 <button class="btn btn-primary btn-sm" type="Submit" id="myBtn" onclick="start()">Send</button>
+				
+				
+			</div>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		var input = document.getElementById("myTextarea");
+		input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+	</script>
+	<script type="text/javascript">
+		function start() {
+			var x= ''
+			
+			var x = document.getElementById("myTextarea").value;
+			
+			  document.getElementById("add").innerHTML += "<div class='chat-r'><div class='sp'></div><div class='mess mess-r'><p>"+x+"</p></div></div>;";
+			  aa=document.getElementById('add');
+					aa.scrollBy(0,500);
+			 
+
+			  document.getElementById("myTextarea").value="";
+			  var URL = "{% url 'get' %}"
+		var mydata = {'msg': x};
+		$.ajax({
+			type: 'POST',
+			url: URL,
+			data: mydata,
+			success: function(data){
+				
+
+				if (data.status == 'save'){
+
+					document.getElementById("add").innerHTML +="<div class='chat-box' id='add'><div class='chat-l'><div class='mess'><p>"+data.dataset+"</div></div></div>";
+					aa=document.getElementById('add');
+					aa.scrollBy(0,500);
+					
+
+			}
+				if(data.status == 0){
+					console.log('Data not save');
+
+				}
+			},
+			error: function(error){
+				console.log(error)
+			},
+			
+		});
+		
+			}
+			
+	</script>
+
+	
+
+</body>
+</html>
